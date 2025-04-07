@@ -1,9 +1,19 @@
 # SENAC-MODULO-A-ATV4
-* Status do projeto (concluido)
-* Tecnologias que serão aplicadas (my sql e netbeans)
-* Time de desenvolvedores (eu)
-* Objetivo do software (Fazer cadastro de pacientes,medicos e consultas e aparecer em uma lista seus dados )
+* Status do projeto
+	* concluido
+* Tecnologias que serão aplicadas
+	* mysql
+	* java
+	*	netbeans
+* Time de desenvolvedores
+	* lucas zanata
+* Objetivo do software
+  	* gerenciar consultas hospitalares	 
+
 * Funcionalidades do sistema :
-(Programar aplicativos computacionais com integração de banco de dados para desktop.
-Desenvolver e organizar interface gráfica para aplicações desktop.
- )
+	*  Fazer cadastro de pacientes
+ 	*  fazer cadastro de medicos
+ 	*   fazer cadastro de onsultas
+ 	*   fazer cadastro de pacientes
+ 	*  listar consultas
+  *  validar login
