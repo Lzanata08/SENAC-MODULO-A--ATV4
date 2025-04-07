@@ -5,6 +5,7 @@
 package dao;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import jpa.HospitalJpa;
 import model.Usuario;
 
@@ -13,12 +14,14 @@ import model.Usuario;
  * @author zanat
  */
 public class UsuarioDao {
-    public void cadastrar(Usuario usuario) {
+   
+    public Usuario buscaPorUsuario(String usuario) {
         EntityManager em = HospitalJpa.getEntityManager();
+
         try {
-            em.getTransaction().begin();
-            em.persist(usuario);
-            em.getTransaction().commit();
+            Query consulta = em.createQuery("SELECT u FROM Usuario u where u.login = :usuario");
+            consulta.setParameter("usuario", usuario);
+            return (Usuario) consulta.getSingleResult();
         } catch (Exception e) {
             em.getTransaction().rollback();
             throw e;

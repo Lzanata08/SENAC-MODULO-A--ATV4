@@ -4,6 +4,10 @@
  */
 package com.senac.etapa3_pi.view;
 
+import dao.UsuarioDao;
+import javax.swing.JOptionPane;
+import model.Usuario;
+
 /**
  *
  * @author zanat
@@ -17,7 +21,7 @@ public class loginView extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null); 
     }
-
+        UsuarioDao usuarioDao = new UsuarioDao();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -108,12 +112,19 @@ public class loginView extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String txtUsuario = txtLogin.getText();
 
-       
-
-      
+        Usuario usuario = usuarioDao.buscaPorUsuario(txtUsuario);
+        
+        if(txtSenha.getText().equals(usuario.getSenha())){
+            JOptionPane.showMessageDialog(this, "Olá " + usuario.getLongin()+ ". Seja bem-vindo!");
             listarConsultaView listar = new listarConsultaView();
          listar.setLocationRelativeTo(null); 
             listar.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuário/senha invalido");
+        }
+
+      
+           
       
     }//GEN-LAST:event_btnLoginActionPerformed
 
